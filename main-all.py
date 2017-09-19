@@ -69,21 +69,23 @@ def main(**kwargs):
 
     opt.parse(kwargs,print_=False)
     if opt.debug:import ipdb;ipdb.set_trace()
-####################################MultiModelALL0.4198###############################################
+
+#####################MultiModelALL0.4198########################
     # opt.model_names=['MultiCNNTextBNDeep','CNNText_inception','RCNN','LSTMText','CNNText_inception']
     # opt.model_paths = ['checkpoints/MultiCNNTextBNDeep_0.37125473788','checkpoints/CNNText_tmp_0.3803NTextBNDeep_0.37125473788','checkpoints/CNNText_tmp_0.380390420742','checkpoints/RCNN_word_0.373609030286','checkpoints/LSTMText_word_0.381833388089','checkpoints/CNNText_tmp_0.376364647145']
-######################################################################################################
-##########################0.42169202532381134#########
+#####-------------------------------------------------------#####
+
+##########################MultiModelALL0.42169202532381134###################
     # opt.model_names=['MultiCNNTextBNDeep','CNNText_inception',
     # #'RCNN',
     # 'LSTMText','CNNText_inception']
     # opt.model_paths = ['checkpoints/MultiCNNTextBNDeep_word_0.410330780091','checkpoints/CNNText_tmp_word_0.41096749885',
     # #'checkpoints/RCNN_word_0.411511574999',
     # 'checkpoints/LSTMText_word_0.411994005382','checkpoints/CNNText_tmp_char_0.402429167301']
-######################################
+#####-------------------------------------------------------#####
 
 
-############################2w2c##################################
+############################MultiModelAll2w2c##################################
     # opt.model_names=['MultiCNNTextBNDeep',
     # 'LSTMText',
     # 'CNNText_inception',
@@ -96,18 +98,19 @@ def main(**kwargs):
     # 'checkpoints/CNNText_tmp_char_0.402429167301',
     # 'checkpoints/RCNN_char_0.403710422571'
     # ]
-#################################################################3
+#####-------------------------------------------------------#####
 
-#####################################0.41718################################################
+#########################MultiModel_0.4171859###############################
     # opt.model_names=['MultiCNNTextBNDeep','LSTMText','CNNText_inception','RCNN']
     # opt.model_paths = ['checkpoints/MultiCNNTextBNDeep_0.37125473788','checkpoints/LSTMText_word_0.381833388089','checkpoints/CNNText_tmp_0.376364647145','checkpoints/RCNN_char_0.3456599248']
-################################################################################################# 
+#####-------------------------------------------------------##### 
 
+#################IForgot########################################
     # opt.model_names=['MultiCNNTextBNDeep','LSTMText','CNNText_inception','RCNN']
     # opt.model_paths = ['checkpoints/MultiCNNTextBNDeep_0.37125473788','checkpoints/LSTMText_word_0.381833388089','checkpoints/CNNText_tmp_0.376364647145','checkpoints/RCNN_char_0.3456599248']
+#####-------------------------------------------------------#####
 
-
-###############################################augment##MultiModelAll_word_0.423535867989#############################3
+############augment##MultiModelAll_0.423535867989##########
     # opt.model_names=['MultiCNNTextBNDeep','RCNN',
     # #'RCNN',
     # 'LSTMText','RCNN']
@@ -115,18 +118,20 @@ def main(**kwargs):
     # 'checkpoints/LSTMText_word_0.413681107036',
     # #'checkpoints/RCNN_word_0.411511574999',
     # 'checkpoints/RCNN_char_0.398378946148']
-#######################################################333
-#######################################multmodelall-fast#########################33
+#####-------------------------------------------------------#####
+
+##################MultiModelallfast_0.41652_val###############################
     # opt.model_names=['MultiCNNTextBNDeep','FastText3','LSTMText']
     # opt.model_paths = ['checkpoints/MultiCNNTextBNDeep_word_0.410011182415','checkpoints/FastText3_word_0.40810787337',
     # 'checkpoints/LSTMText_word_0.413681107036']
     #'checkpoints/RCNN_word_0.411511574999']
-#########################################################################
+#####-------------------------------------------------------#####
 
-    opt.model_names=['CNNText_inception','FastText3','RCNN']
-    opt.model_paths = ['checkpoints/CNNText_tmp_word_0.41254624328','checkpoints/FastText3_word_0.409160833419',
-    'checkpoints/RCNN_word_0.413446202556']
-
+##############################MultiModelall-(未使用)###################################
+    # opt.model_names=['CNNText_inception','FastText3','RCNN']
+    # opt.model_paths = ['checkpoints/CNNText_tmp_word_0.41254624328','checkpoints/FastText3_word_0.409160833419',
+    # 'checkpoints/RCNN_word_0.413446202556']
+#####-------------------------------------------------------#####
 
     model = getattr(models,opt.model)(opt).cuda()
     if opt.model_path:
