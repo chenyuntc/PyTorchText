@@ -23,21 +23,14 @@ class MultiModelAll(BasicModule):
             tmp_config = Config().parse(opt.state_dict(),print_=False)
             tmp_config.embedding_path=None
             _model = getattr(models,_name)(tmp_config)
-
+            # 加载预训练的子模型
             if _path is not None:
                 _model.load(_path)
-
-            # if _model.opt.type_=='char':
+            # 所有预训练的子模型的embedding共享
             _model.encoder=(self.char_embedding if _model.opt.type_=='char' else self.word_embedding)
-            # else:
-                # _model.encoder=self.word_embedding
-
             self.models.append(_model)
-        
-
-
         self.models = nn.ModuleList(self.models)
-        # self.word_models = nn.ModuleList(self.word_models)
+        
         self.model_num = len(self.models)
         self.weights = nn.Parameter(t.ones(opt.num_classes,self.model_num))
         assert self.opt.loss=='bceloss'
