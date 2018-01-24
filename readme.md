@@ -1,6 +1,6 @@
 
 
-# 中文用户请查看[readme_zh.md](readme_zh.md)
+# 中文用户请查看[readme-zh.md](readme-zh.md)
 
 This is the solution for [Zhihu Machine Learning Challenge 2017](https://biendata.com/competition/zhihu/). We won the champion out of 963 teams.
 
