@@ -116,7 +116,7 @@ def main(**kwargs):
                     ipdb.set_trace()
 
                 predict = score.data.topk(5,dim=1)[1].cpu().tolist()
-                true_target = label.data.float().topk(5,dim=1)
+                true_target = label.data.float().cpu().topk(5,dim=1)
                 true_index=true_target[1][:,:5]
                 true_label=true_target[0][:,:5]
                 predict_label_and_marked_label_list=[]
@@ -133,7 +133,6 @@ def main(**kwargs):
                 #eval()
                 vis.plot('loss', loss_meter.value()[0])
                 k = t.randperm(label.size(0))[0]
-                output=t.nn.functional.sigmoid(score)
 
             if ii%opt.decay_every == opt.decay_every-1:   
                 # 计算在验证集上的分数,并相对应的调整学习率
